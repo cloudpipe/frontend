@@ -1,6 +1,6 @@
 # Cloudpipe Frontend
 
-[![Build Status](https://travis-ci.org/cloudpipe/frontend?branch=master)](https://travis-ci.org/cloudpipe/frontend?branch=master)
+[![Build Status](https://travis-ci.org/cloudpipe/frontend.svg?branch=master)](https://travis-ci.org/cloudpipe/frontend)
 
 This is the open-source web UI for cloudpipe.
 
