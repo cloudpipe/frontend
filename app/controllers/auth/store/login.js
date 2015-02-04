@@ -1,11 +1,13 @@
 import Ember from 'ember';
-// import Session from '../../../models/session';
 
 export default Ember.Controller.extend({
+  needs: 'home',
+
   actions: {
     login: function() {
       var
         self = this,
+        homeController = this.get("controllers.home"),
         payload = { accountName: this.get("accountName"), password: this.get("password") };
 
       Ember.$.post("/v1/keys", payload).then(function (key) {
@@ -14,7 +16,9 @@ export default Ember.Controller.extend({
           apiKey: key,
         });
 
-        console.log("Started session: " + key);
+        homeController.set("model", session);
+
+        self.transitionToRoute("home");
       });
     }
   }
