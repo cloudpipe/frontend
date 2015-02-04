@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:auth/store/login', 'AuthStoreLoginController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:home']
 });
 
 // Replace this with your real tests.
