@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('auth', function () {
+    this.resource('auth.store', { path: 'store' }, function () {
+      this.route('login');
+    });
+  });
+
   this.route('home');
 });
 
