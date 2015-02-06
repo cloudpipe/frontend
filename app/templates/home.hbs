@@ -1,3 +1,30 @@
-<h2>You're logged in, {{ accountName }}. Now what</h2>
+<nav>
+  <h2>Welcome, {{ accountName }}</h2>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#">Jobs</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Log Out</a></li>
+  </ul>
+</nav>
 
-<p><em>Your API key is <code>{{ apiKey }}</code></em></p>
+<div class="jobs ongoing list-group">
+  <a href="#" class="job list-group-item">
+    <h4>Ongoing Job <small>30 seconds</small></h4>
+    <p><span class="text-default"><i class="fa fa-circle-o-notch fa-spin"></i></span> In progress</p>
+  </a>
+</div>
+
+<div class="jobs completed list-group">
+  <a href="#" class="job list-group-item">
+    <h4>Job One <small>Completed <acronym title="10:50am 6 Feb 2015">9 minutes ago</acronym></small></h4>
+    <p><span class="text-success"><i class="fa fa-check-circle"></i> Success</span> in 57 seconds</p>
+  </a>
+  <a href="#" class="job list-group-item">
+    <h4>Job Two <small>Completed 12 minutes ago</small></h4>
+    <p><span class="text-success"><i class="fa fa-check-circle"></i> Success</span> in 59 seconds</p>
+  </a>
+  <a href="#" class="job list-group-item">
+    <h4>Job Three <small>Completed 12 minutes ago</small></h4>
+    <p><span class="text-danger"><i class="fa fa-exclamation-circle"></i> Failure</span> in 4 seconds</p>
+  </a>
+</div>
