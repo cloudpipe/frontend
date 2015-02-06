@@ -1,6 +1,8 @@
 /* global require, module */
 
-var pickFiles = require('broccoli-static-compiler');
+var
+  mergeTrees = require('broccoli-merge-trees'),
+  pickFiles = require('broccoli-static-compiler');
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
@@ -26,4 +28,4 @@ var fontTree = pickFiles('bower_components/fontawesome/fonts', {
   destDir: '/fonts'
 });
 
-module.exports = app.toTree(fontTree);
+module.exports = mergeTrees([app.toTree(), fontTree]);

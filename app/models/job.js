@@ -19,20 +19,20 @@ var successfulStatus = {
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  createdAt: DS.attr('string'),
-  startedAt: DS.attr('string'),
-  finishedAt: DS.attr('string'),
+  createdAt: DS.attr('pipedate'),
+  startedAt: DS.attr('pipedate'),
+  finishedAt: DS.attr('pipedate'),
   status: DS.attr('string'),
-  runtime: DS.attr('number'),
-  queueDelay: DS.attr('number'),
-  overheadDelay: DS.attr('number'),
+  runtime: DS.attr('nanoduration'),
+  queueDelay: DS.attr('nanoduration'),
+  overheadDelay: DS.attr('nanoduration'),
   stdout: DS.attr('string'),
   stderr: DS.attr('string'),
   cmd: DS.attr('string'),
   core: DS.attr('string'),
   multicore: DS.attr('number'),
   resultType: DS.attr('string'),
-  maxRuntime: DS.attr('number'),
+  maxRuntime: DS.attr('nanoduration'),
 
   isRunning: function() {
     return runningStatus[this.get('status')];
