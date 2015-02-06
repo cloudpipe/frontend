@@ -6,6 +6,7 @@ module.exports = function(app) {
     res.send({
       'jobs': [
         {
+          "jid": 1,
           "name": "Ongoing",
           "created_at": "2015-02-06 13:19:50.000",
           "started_at": "2015-02-06 13:20:00.000",
@@ -23,6 +24,7 @@ module.exports = function(app) {
           "max_runtime": 6000,
         },
         {
+          "jid": 2,
           "name": "First",
           "created_at": "2015-02-06 13:00:00.000",
           "started_at": "2015-02-06 13:00:10.000",
@@ -41,6 +43,7 @@ module.exports = function(app) {
           "max_runtime": 6e11,
         },
         {
+          "jid": 3,
           "name": "Second",
           "created_at": "2015-02-06 12:45:00.000",
           "started_at": "2015-02-06 12:46:00.000",
@@ -59,11 +62,12 @@ module.exports = function(app) {
           "max_runtime": 6e11,
         },
         {
+          "jid": 4,
           "name": "Boom",
           "started_at": "2015-02-06 12:40:00.000",
           "created_at": "2015-02-06 12:40:00.000",
           "finished_at": "2015-02-06 12:40:05.000",
-          "status": "processing",
+          "status": "error",
           "runtime": 5e9,
           "queue_delay": 0,
           "overhead_delay": 0,
