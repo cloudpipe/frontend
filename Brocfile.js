@@ -16,6 +16,9 @@ var app = new EmberApp({
 // Bootstrap
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
+// Moment
+app.import('bower_components/moment/moment.js');
+
 // FontAwesome
 var fontTree = pickFiles('bower_components/fontawesome/fonts', {
   srcDir: '/',

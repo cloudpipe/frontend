@@ -8,14 +8,14 @@ var runningStatus = {
   error: false,
   killed: false,
   stalled: false,
-}
+};
 
 var successfulStatus = {
   done: true,
   error: false,
   killed: false,
   stalled: false,
-}
+};
 
 export default DS.Model.extend({
   name: DS.attr('string'),
