@@ -1,3 +1,14 @@
-<h2>You're logged in, {{ accountName }}. Now what</h2>
+<nav>
+  <h2>Welcome, {{ accountName }}</h2>
+  <ul class="nav nav-pills">
+    {{#link-to 'home.index' tagName='li' href=false}}
+      {{#link-to 'home.index'}}Jobs{{/link-to}}
+    {{/link-to}}
+    {{#link-to 'home.profile' tagName='li' href=false}}
+      {{#link-to 'home.profile'}}Profile{{/link-to}}
+    {{/link-to}}
+    <li role="presentation"><a href="#" {{action 'logout'}}>Log Out</a></li>
+  </ul>
+</nav>
 
-<p><em>Your API key is <code>{{ apiKey }}</code></em></p>
+{{outlet}}

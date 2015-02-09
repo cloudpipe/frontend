@@ -12,7 +12,9 @@ Router.map(function() {
     });
   });
 
-  this.route('home');
+  this.resource('home', function() {
+    this.route('profile');
+  });
 });
 
 export default Router;

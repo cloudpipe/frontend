@@ -1,0 +1,27 @@
+<p>Your API key is: <code>{{ apiKey }}</code>.</p>
+
+<p>Want to run some code? First, install multyvac:</p>
+
+<pre>pip install multyvac</pre>
+
+<p>Then, authenticate to the server and run some jobs:</p>
+
+<pre>
+import multyvac
+
+multyvac.config.set_key(api_key='{{ accountName }}',
+                        api_secret_key='{{ apiKey }}',
+                        api_url='http://api.cloudpi.pe:8080/v1')
+
+def add(a, b):
+  return a + b
+
+jid = multyvac.submit(add, 3, 4)
+job = multyvac.get(jid)
+
+# Blocks until the job has completed
+result = job.get_result()
+</pre>
+
+<p>This would be a stellar place to link to the documentation for our real SDK once the SDK and
+the documentation exist!</p>
