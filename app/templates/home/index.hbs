@@ -1,7 +1,7 @@
 <div class="jobs ongoing list-group">
   {{#each job in ongoing itemController="job"}}
     <a href="#" class="job list-group-item">
-      <h4>{{ job.name }} <small>## seconds</small></h4>
+      <h4>{{ job.name }} <small>Running for {{ job.runtime }}</small></h4>
       <p><span class="text-default"><i class="fa fa-circle-o-notch fa-spin"></i></span> In progress</p>
     </a>
   {{/each}}
@@ -10,11 +10,11 @@
 <div class="jobs completed list-group">
   {{#each job in completed itemController="job"}}
     <a href="#" class="job list-group-item">
-      <h4>{{ job.name }} <small>Completed <acronym title="10:50am 6 Feb 2015">## minutes ago</acronym></small></h4>
+      <h4>{{ job.name }} <small>Completed <acronym {{bind-attr title=job.finishedAt}}>{{ job.finishedAgo }} ago</acronym></small></h4>
       {{#if job.wasSuccessful}}
-      <p><span class="text-success"><i class="fa fa-check-circle"></i> {{ job.status }}</span> in ## seconds</p>
+      <p><span class="text-success"><i class="fa fa-check-circle"></i> {{ job.status }}</span> in {{ job.runtime }}</p>
       {{else}}
-      <p><span class="text-danger"><i class="fa fa-exclamation-circle"></i> {{ job.status }}</span> in ## seconds</p>
+      <p><span class="text-danger"><i class="fa fa-exclamation-circle"></i> {{ job.status }}</span> in {{ job.runtime }}</p>
       {{/if}}
     </a>
   {{/each}}

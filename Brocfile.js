@@ -20,6 +20,7 @@ app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
 // Moment
 app.import('bower_components/moment/moment.js');
+app.import('vendor/moment-precise-range/readable-range.js');
 
 // FontAwesome
 var fontTree = pickFiles('bower_components/fontawesome/fonts', {
