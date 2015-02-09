@@ -14,5 +14,10 @@ export default DS.Model.extend({
   loadFrom: function(storage) {
     this.set('accountName', storage.getItem('accountName'));
     this.set('apiKey', storage.getItem('apiKey'));
+  },
+
+  // Determine whether or not a saved session is present within a given storage.
+  isIn: function(storage) {
+    return storage.getItem('accountName') && storage.getItem('apiKey');
   }
 });

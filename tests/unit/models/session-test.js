@@ -43,3 +43,27 @@ test('it reconstitutes itself from local or sessionStorage', function () {
   strictEqual(model.get('accountName'), 'myself@blah.com');
   strictEqual(model.get('apiKey'), '54321');
 });
+
+test('it knows if it can be loaded from a specific storage', function () {
+  var model = this.subject();
+
+  var hasSession = {
+    accountName: 'myself@blah.com',
+    apiKey: '54321',
+    getItem: function(key) {
+      return hasSession[key];
+    }
+  };
+
+  ok(model.isIn(hasSession));
+});
+
+test("it knows if it isn't stored in a specific storage", function () {
+  var model = this.subject();
+
+  var noSession = {
+    getItem: function(key) { return null; }
+  };
+
+  ok(!model.isIn(noSession));
+});
