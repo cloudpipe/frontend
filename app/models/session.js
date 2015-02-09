@@ -19,5 +19,11 @@ export default DS.Model.extend({
   // Determine whether or not a saved session is present within a given storage.
   isIn: function(storage) {
     return storage.getItem('accountName') && storage.getItem('apiKey');
+  },
+
+  // Remove an existing session from a given storage.
+  removeFrom: function(storage) {
+    storage.removeItem('accountName');
+    storage.removeItem('apiKey');
   }
 });

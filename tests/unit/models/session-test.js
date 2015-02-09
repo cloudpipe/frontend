@@ -67,3 +67,18 @@ test("it knows if it isn't stored in a specific storage", function () {
 
   ok(!model.isIn(noSession));
 });
+
+test("it removes itself from a specific storage", function () {
+  var model = this.subject();
+
+  var mock = {
+    removed: [],
+    removeItem: function(key) { mock.removed.push(key); }
+  };
+
+  model.removeFrom(mock);
+
+  strictEqual(mock.removed.length, 2);
+  strictEqual(mock.removed[0], 'accountName');
+  strictEqual(mock.removed[1], 'apiKey');
+});
